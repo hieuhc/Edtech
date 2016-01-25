@@ -12,6 +12,8 @@ from EdTech import parse_json_2_csv
 # 55caf449a9fa340800ae192b
 # 55caf449a9fa340800ae192c
 # 55caf449a9fa340800ae192d
+
+
 def process_url(url):
     if 'https://learn.bi.no/spaces/55caf449a9fa340800ae192b' in url:
         return 'Kulturledelse KLS3551'
@@ -21,12 +23,16 @@ def process_url(url):
         return 'Entrepreneurship ELE3702'
     else:
         return ''
+
+
 def process_time(epoch):
-#     human_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch))
+    #   human_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(epoch))
     tz = pytz.timezone('Europe/Oslo')
     dt = datetime.fromtimestamp(epoch, tz)   
     human_time = dt.strftime('%Y-%m-%d %H:%M:%S') 
     return human_time
+
+
 def process_event(event_name):
     if 'Viewed content' in event_name:
         return 'Viewed content'
@@ -40,6 +46,8 @@ def process_event(event_name):
         return 'Viewed space'
     else:
         return event_name
+
+
 def preprocess_data(data):    
     data['event_1'] = data.event.map(lambda x : process_event(x))    
     data['time_1']= data.time.map(lambda x : process_time(x))    
@@ -72,6 +80,7 @@ def preprocess_data(data):
 #     data.to_csv(data_to, index = False, encoding = 'utf8')
     return data
 
+
 def process_overlap(data_1, data_2):
     time_end_1 = data_1.time[data_1.shape[0] - 1]
     for idx in range(data_2.shape[0]):
@@ -83,6 +92,8 @@ def process_overlap(data_1, data_2):
     print(data_2_new.shape)
     data = pd.concat([data_1, data_2_new], ignore_index= True)
     return data
+
+
 def weekly2all(data_overall_processed_file, data_overall_raw_file, data_weekly_json, data_weekly_raw_file):
     parse_json_2_csv.json2csv(data_weekly_json, data_weekly_raw_file)
     data_weekly_raw = pd.read_csv(data_weekly_raw_file, encoding ='utf8')
@@ -95,21 +106,26 @@ def weekly2all(data_overall_processed_file, data_overall_raw_file, data_weekly_j
                  
     data_raw.to_csv(data_overall_raw_file, index = False, encoding='utf8')
     data_processed.to_csv(data_overall_processed_file, index = False, encoding = 'utf8')
-if __name__ == '__main__':
+
+
+def main_old():
     # add weekly data to the current overall data
-#     weekly2all('teacher.csv','raw/teacher_raw.csv','data/anonymous-teacher-events_1-12.json', 'raw/teacher_1-12_raw.csv')
-#     weekly2all('student.csv','raw/student_raw.csv','data/anonymous-student-events_1-12.json', 'raw/student_1-12_raw.csv')
+    #     weekly2all('teacher.csv','raw/teacher_raw.csv','data/anonymous-teacher-events_1-12.json', 'raw/teacher_1-12_raw.csv')
+    #     weekly2all('student.csv','raw/student_raw.csv','data/anonymous-student-events_1-12.json', 'raw/student_1-12_raw.csv')
 
     # pre_process all data
     # teacher
     parse_json_2_csv.json2csv('data/anonymous-teacher-events.json', 'raw/teacher_raw.csv')
     data_raw = pd.read_csv('raw/teacher_raw.csv')
     data = preprocess_data(data_raw)
-    data.to_csv('teacher.csv', index = False, encoding = 'utf8')
+    data.to_csv('teacher.csv', index=False, encoding = 'utf8')
     # student
     parse_json_2_csv.json2csv('data/anonymous-student-events.json', 'raw/student_raw.csv')
     data_raw = pd.read_csv('raw/student_raw.csv')    
     data = preprocess_data(data_raw)
-    data.to_csv('student.csv', index = False, encoding = 'utf8')
-    
-    
+    data.to_csv('student.csv', index=False, encoding = 'utf8')
+
+if __name__ == '__main__':
+    data_raw = pd.read_csv('raw/student_raw.csv')
+    for event in set(data_raw.event.values):
+        print(event)

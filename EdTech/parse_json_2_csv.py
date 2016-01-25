@@ -12,8 +12,6 @@ def json2csv(json_file_name, csv_file_name):
     json_file = open(json_file_name) 
     data = json.load(json_file) 
     f = csv.writer(open(csv_file_name, "w", encoding='utf8'), delimiter = ',', lineterminator='\n')
-        
-    
     print(len(data))
     properties_all = ['event']
     for x in data:
@@ -25,7 +23,6 @@ def json2csv(json_file_name, csv_file_name):
     for x in data:    
         row_content = []    
         for prop in properties_all:
-            item_val = ''
             if prop == 'event':
                 item_val = x['event']
             elif prop not in x['properties']:
@@ -37,17 +34,11 @@ def json2csv(json_file_name, csv_file_name):
         f.writerow(row_content)
 if __name__ == '__main__':
     # convert weekly data
-#     student_json = 'data/anonymous-student-events_21-9.json'
-#     teacher_json = 'data/anonymous-teacher-events_21-9.json'
-#     student_csv = 'data/student_21-9_raw.csv'
-#     teacher_csv = 'data/teacher_21-9_raw.csv'
-#     json2csv(student_json, student_csv)
-#     json2csv(teacher_json, teacher_csv)
     
     # convert a overall data
-    teacher_json = 'data/anonymous-teacher.json'
-    teacher_csv = 'raw/teacher_raw.csv'
-    json2csv(teacher_json, teacher_csv)
+    file_json = 'data/anonymous-teacher-events.json'
+    file_csv = 'raw/student_raw.csv'
+    json2csv(file_json, file_csv)
      
     
     
