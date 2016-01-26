@@ -5,13 +5,12 @@ Created on Sep 10, 2015
 '''
 import csv
 import json
-import re
 
 
 def json2csv(json_file_name, csv_file_name):
     json_file = open(json_file_name) 
     data = json.load(json_file) 
-    f = csv.writer(open(csv_file_name, "w", encoding='utf8'), delimiter = ',', lineterminator='\n')
+    f = csv.writer(open(csv_file_name, "w", encoding='utf8'), delimiter=',', lineterminator='\n')
     print(len(data))
     properties_all = ['event']
     for x in data:
@@ -36,7 +35,7 @@ if __name__ == '__main__':
     # convert weekly data
     
     # convert a overall data
-    file_json = 'data/anonymous-teacher-events.json'
+    file_json = 'data/anonymous-student-events.json'
     file_csv = 'raw/student_raw.csv'
     json2csv(file_json, file_csv)
      
