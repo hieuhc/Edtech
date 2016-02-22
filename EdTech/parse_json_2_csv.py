@@ -35,8 +35,8 @@ if __name__ == '__main__':
     # convert weekly data
     
     # convert a overall data
-    file_json = 'data/anonymous-student-events.json'
-    file_csv = 'raw/student_raw.csv'
+    file_json = 'data/json_data/anonymous-teacher-events.json'
+    file_csv = 'data/raw/teacher_raw.csv'
     json2csv(file_json, file_csv)
      
     

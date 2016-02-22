@@ -1,0 +1,34 @@
+Viewed.content.all
+ Min.   :   0.00   
+ 1st Qu.:   4.00   
+ Median :  15.00   
+ Mean   :  63.98   
+ 3rd Qu.:  46.00   
+ Max.   :1174.00   
+> y = subset(content_dur, Viewed.content.topic > -1, select=Viewed.content.topic)
+> summary(y)
+ Viewed.content.topic
+ Min.   :   0.0      
+ 1st Qu.:   6.0      
+ Median :  24.0      
+ Mean   : 119.5      
+ 3rd Qu.: 101.2      
+ Max.   :1194.0     
+
+=====
+from Viewed content/all:
++ Viewed.space: 9%
++ Viewed.content.all: 10%
++ Navigating.to.feed.overview: 4%
++ Downloaded.file: 2%
++ Selected.topic: 1.7%
++ Viewed.content: 44%
+
+from Viewed content/topic:
++ Viewed space: 9%
++ Viewed.content.topic: 7%
++ Viewed.feed.topic: 10%
++ Selected.topic: 8%
++ Viewed.content: 42%
+
+=====
