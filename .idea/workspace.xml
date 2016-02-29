@@ -2,63 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a78fb879-f5ef-483d-a18d-d60e221387a4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EdTech/Constant.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/EdTech/feed_extraction.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/extract_26.1/.~lock.openrate_report_13.1_26.1.xlsx#" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/extract_26.1/openrate_report_10.1_26.1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/extract_26.1/openrate_report_13.1_26.1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/extract_26.1/openrate_report_13.1_26.1.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/100_folderviewratio_entre.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/3_folderviewratio_strategi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/95_folderviewratio_strategi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/Users behavior analysis 1.pptx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/note.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca90_studenttypeonviewrate_kultur.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca95_studenttypeonviewrate_entrepreneurship.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca95_studenttypeonviewrate_strategi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca_0.9.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca_3.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca_studenttypeonviewrate_kultur.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/pca_analysis/pca_studenttypeonviewrate_strategi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/average_eventduration_27.9.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/boxplot_session.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/boxplot_sessionbycourses.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/csv2session.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/duration_viewcontent_byos.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/event_flow_all_usr.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/event_flow_analysis.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/event_flow_usrnotview_11_10.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/feats2_imp_tree.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/feats_extract.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/how OS affect sessions duration.pptx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/matrix_trans.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/matrix_trans_desktop.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/matrix_trans_mobile.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/model_build.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/notes.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/num_sessions_by_os.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/session_analysis.R" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/session_analysis.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/session_length_by_os.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/session_length_summary_27.9.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/sslength_lastDuration.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/sslength_vs_contentUploaded.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/sslength_vs_durationFromLast.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/sslength_vs_numberOfViewContents.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/student_session.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/student_ss_dur.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/student_ss_dur_feats_1.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/student_ss_dur_feats_2.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/trans_matrix_folder_Kulturledelse KLS3551.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/trans_matrix_folder_Social Entrepreneurship ELE3702.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/trans_matrix_folder_Strategi STR3605.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/tree_1.dot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/session_analysis/tree_2.dot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/user_analysis.R" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/EdTech/user_registered_count.R" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EdTech/parse_json_2_csv.py" afterPath="$PROJECT_DIR$/EdTech/parse_json_2_csv.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EdTech/preprocess.py" afterPath="$PROJECT_DIR$/EdTech/preprocess.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EdTech/analysis/session_analysis/report/spring16/how_interact_content.txt" afterPath="$PROJECT_DIR$/EdTech/analysis/session_analysis/report/spring16/how_interact_content.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py" afterPath="$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EdTech/weekly_openrate_report.py" afterPath="$PROJECT_DIR$/EdTech/weekly_openrate_report.py" />
     </list>
     <ignored path="Edtech.iws" />
@@ -78,7 +24,7 @@
     <SUITE FILE_PATH="coverage/Edtech$csv2session.coverage" NAME="csv2session Coverage Results" MODIFIED="1455957913373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech/analysis/session_analysis" />
     <SUITE FILE_PATH="coverage/Edtech$preprocess.coverage" NAME="preprocess Coverage Results" MODIFIED="1456162496611" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech" />
     <SUITE FILE_PATH="coverage/Edtech$parse_json_2_csv.coverage" NAME="parse_json_2_csv Coverage Results" MODIFIED="1454147517796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech" />
-    <SUITE FILE_PATH="coverage/Edtech$session_analysis.coverage" NAME="session_analysis Coverage Results" MODIFIED="1456043352706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech/analysis/session_analysis" />
+    <SUITE FILE_PATH="coverage/Edtech$session_analysis.coverage" NAME="session_analysis Coverage Results" MODIFIED="1456574905291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech/analysis/session_analysis" />
     <SUITE FILE_PATH="coverage/Edtech$weekly_openrate_report.coverage" NAME="weekly_openrate_report Coverage Results" MODIFIED="1456162503618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/EdTech" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -90,24 +36,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="preprocess.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EdTech/preprocess.py">
+      <file leaf-file-name="session_analysis.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+              <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
               <folding>
-                <element signature="e#46#65#0" expanded="true" />
+                <element signature="e#1055#2521#0" expanded="false" />
+                <element signature="e#5779#6705#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constant.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EdTech/Constant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -115,9 +52,11 @@
       <file leaf-file-name="weekly_openrate_report.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EdTech/weekly_openrate_report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75398636">
-              <caret line="134" column="52" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="52" />
-              <folding />
+            <state vertical-scroll-proportion="0.815625">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+              <folding>
+                <element signature="e#45#72#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,22 +65,9 @@
         <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/csv2session.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="188" column="161" selection-start-line="188" selection-start-column="161" selection-end-line="188" selection-end-column="161" />
+              <caret line="155" column="53" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
               <folding>
                 <element signature="e#6159#7573#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session_analysis.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
-              <folding>
-                <element signature="e#384#1850#0" expanded="false" />
-                <element signature="e#4968#5894#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -171,8 +97,8 @@
         <option value="$PROJECT_DIR$/EdTech/feed_extraction.py" />
         <option value="$PROJECT_DIR$/EdTech/Constant.py" />
         <option value="$PROJECT_DIR$/EdTech/analysis/session_analysis/csv2session.py" />
-        <option value="$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py" />
         <option value="$PROJECT_DIR$/EdTech/preprocess.py" />
+        <option value="$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py" />
         <option value="$PROJECT_DIR$/EdTech/weekly_openrate_report.py" />
       </list>
     </option>
@@ -213,9 +139,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -376,6 +301,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,7 +314,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="/usr/bin/python3.4" />
   </component>
-  <component name="RunManager" selected="Python.weekly_openrate_report">
+  <component name="RunManager" selected="Python.session_analysis">
     <configuration default="false" name="preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -1131,9 +1057,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.weekly_openrate_report" />
-        <item index="1" class="java.lang.String" itemvalue="Python.preprocess" />
-        <item index="2" class="java.lang.String" itemvalue="Python.session_analysis" />
+        <item index="0" class="java.lang.String" itemvalue="Python.session_analysis" />
+        <item index="1" class="java.lang.String" itemvalue="Python.weekly_openrate_report" />
+        <item index="2" class="java.lang.String" itemvalue="Python.preprocess" />
         <item index="3" class="java.lang.String" itemvalue="Python.csv2session" />
         <item index="4" class="java.lang.String" itemvalue="Python.feed_extraction" />
       </list>
@@ -1145,6 +1071,9 @@
     </option>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -1170,11 +1099,13 @@
       <workItem from="1455957833181" duration="3348000" />
       <workItem from="1456027458899" duration="7794000" />
       <workItem from="1456149446148" duration="6949000" />
+      <workItem from="1456545222265" duration="5741000" />
+      <workItem from="1456758146452" duration="3756000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87754000" />
+    <option name="totallyTimeSpent" value="97251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1191,26 +1122,26 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3402985" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21137586" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17140661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1383551" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31343284" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32686567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1233,9 +1164,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#65#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EdTech/Constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EdTech/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1251,7 +1194,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#45#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1269,9 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="72" column="64" selection-start-line="72" selection-start-column="57" selection-end-line="72" selection-end-column="64" />
-          <folding>
-            <element signature="e#46#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,7 +1229,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="107" column="34" selection-start-line="107" selection-start-column="34" selection-end-line="107" selection-end-column="34" />
-          <folding />
+          <folding>
+            <element signature="e#45#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,8 +1250,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#384#1850#0" expanded="false" />
-            <element signature="e#4968#5894#0" expanded="false" />
+            <element signature="e#1055#2521#0" expanded="false" />
+            <element signature="e#5779#6705#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1316,9 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1353,8 +1294,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
           <folding>
-            <element signature="e#384#1850#0" expanded="false" />
-            <element signature="e#4968#5894#0" expanded="false" />
+            <element signature="e#1055#2521#0" expanded="false" />
+            <element signature="e#5779#6705#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1578,10 +1519,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EdTech/preprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea15/system/python_stubs/-1247971765/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3328125">
+          <caret line="719" column="8" selection-start-line="719" selection-start-column="8" selection-end-line="719" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/report/spring16/duration_content_topic.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-153.11627">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/csv2session.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="188" column="161" selection-start-line="188" selection-start-column="161" selection-end-line="188" selection-end-column="161" />
+          <caret line="155" column="53" selection-start-line="155" selection-start-column="53" selection-end-line="155" selection-end-column="53" />
           <folding>
             <element signature="e#6159#7573#0" expanded="false" />
           </folding>
@@ -1591,29 +1554,21 @@
     <entry file="file://$PROJECT_DIR$/EdTech/analysis/session_analysis/session_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
           <folding>
-            <element signature="e#384#1850#0" expanded="false" />
-            <element signature="e#4968#5894#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EdTech/preprocess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="e#46#65#0" expanded="true" />
+            <element signature="e#1055#2521#0" expanded="false" />
+            <element signature="e#5779#6705#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/EdTech/weekly_openrate_report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75398636">
-          <caret line="134" column="52" selection-start-line="134" selection-start-column="52" selection-end-line="134" selection-end-column="52" />
-          <folding />
+        <state vertical-scroll-proportion="0.815625">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="e#45#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

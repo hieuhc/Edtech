@@ -1,3 +1,5 @@
+Viewed content duration from
+
 Viewed.content.all
  Min.   :   0.00   
  1st Qu.:   4.00   
@@ -32,3 +34,21 @@ from Viewed content/topic:
 + Viewed.content: 42%
 
 =====
+summary duration of 'Viewed content/all' and 'Viewed content/topic'
+Viewed.content.all Viewed.content.topic
+ Min.   :   0.00    Min.   :   0.0      
+ 1st Qu.:   1.00    1st Qu.:   1.0      
+ Median :   8.00    Median :   5.0      
+ Mean   :  57.95    Mean   :  76.8      
+ 3rd Qu.:  35.00    3rd Qu.:  40.0      
+ Max.   :2130.00    Max.   :3139.0      
+ NA's   :1          NA's   :319        
+
+
+
+
+
+
+
+
+

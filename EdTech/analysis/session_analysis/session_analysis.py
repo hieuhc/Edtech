@@ -16,6 +16,25 @@ class SessionAnalysis:
         print('init function')
         self.ss_data = pd.read_csv(ss_file)
 
+    @staticmethod
+    def write_dict_2_file(dict_2_write, file_name):
+        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='\n')
+        file.writerow(list(dict_2_write.keys()))
+        row_idx = 0
+        while True:
+            stop = True
+            row_vale = []
+            for key in dict_2_write.keys():
+                if len(dict_2_write[key]) > row_idx:
+                    stop = False
+                    row_vale.append(dict_2_write[key][row_idx])
+                else:
+                    row_vale.append('')
+            file.writerow(row_vale)
+            row_idx += 1
+            if stop:
+                break
+
     def export_duration_view_content(self, file_name):
         """
         :return: duration of 'viewed content' action respect to places action comes from
@@ -67,25 +86,11 @@ class SessionAnalysis:
                 time_start = time_end = self.ss_data.time[idx]
             elif (ss_ing == ss_cur) and (screen_ing == screen_crr):
                 time_end = self.ss_data.time[idx]
-        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='\n')
-        file.writerow(list(duration_screen_dict.keys()))
-        row_idx = 0
-        while True:
-            stop = True
-            row_vale = []
-            for key in duration_screen_dict.keys():
-                if len(duration_screen_dict[key]) > row_idx:
-                    stop = False
-                    row_vale.append(duration_screen_dict[key][row_idx])
-                else:
-                    row_vale.append('')
-            file.writerow(row_vale)
-            row_idx += 1
-            if stop:
-                break
+        self.write_dict_2_file(duration_screen_dict, file_name)
 
     def export_duration_content_topic(self, file_name):
         duration_content_topic = {'Viewed content/all': [], 'Viewed content/topic': []}
+        ss_crr, event_crr, time_start, time_end = '', '', 0, 0
         for idx in range(self.ss_data.shape[0]):
             ss_ing, event_ing, screen_ing, time_ing = self.ss_data.session[idx], self.ss_data.event_1[idx], \
                                             self.ss_data.screen[idx], self.ss_data.time[idx]
@@ -94,19 +99,29 @@ class SessionAnalysis:
                 if event_crr in duration_content_topic:
                     duration_content_topic[event_crr].append(time_end - time_start)
                 ss_crr, event_crr, screen_crr, time_start, time_end = ss_ing, event_ing, screen_ing, time_ing, time_ing
-            elif (screen_ing == screen_crr) and (event_crr in duration_content_topic):
-                if (event_ing in duration_content_topic) and (event_crr != event_ing):
+            elif event_crr in duration_content_topic:
+                if ((event_ing in duration_content_topic) and (event_crr != event_ing)) or (screen_ing != screen_crr):
                     duration_content_topic[event_crr].append(time_ing - time_start)
                     event_crr, screen_crr, time_start, time_end = event_ing, screen_ing, time_ing, time_ing
                 else:
                     time_end = time_ing
-            elif (screen_ing != screen_crr) and (event_crr in duration_content_topic):
-                duration_content_topic[event_crr].append(time_ing - time_start)
-                if event_ing in duration_content_topic:
-                    event_crr, screen_crr, time_start, time_end = event_ing, screen_ing, time_ing, time_ing
+            else:
+                event_crr, screen_crr, time_start, time_end = event_ing, screen_ing, time_ing, time_ing
 
         print(duration_content_topic['Viewed content/all'])
         print(duration_content_topic['Viewed content/topic'])
+        self.write_dict_2_file(duration_content_topic, file_name=file_name)
+
+    def export_duration_selecting_content(self, file_name):
+        duration_selecting_content = {'Viewed content/all': [], 'Viewed content/topic': []}
+        for idx in range(self.ss_data.shape[0] - 1):
+            s_ing, event_ing, screen_ing, time_ing = self.ss_data.session[idx], self.ss_data.event_1[idx], \
+                                                     self.ss_data.screen[idx], self.ss_data.time[idx]
+            if (s_ing == self.ss_data.session[idx + 1]) and (event_ing in duration_selecting_content) and \
+                    (self.ss_data.event_1[idx + 1] == 'Viewed content'):
+                duration_selecting_content[event_ing].append(self.ss_data.time[idx + 1] - time_ing)
+
+        self.write_dict_2_file(duration_selecting_content, file_name=file_name)
 
     @staticmethod
     def users_log_all_week():
@@ -134,4 +149,6 @@ class SessionAnalysis:
 if __name__ == '__main__':
     ss_obj = SessionAnalysis('data/student_session.csv')
     # ss_obj.export_duration_view_content('report/spring16/duration_view_content.csv')
-    ss_obj.export_duration_screen('report/spring16/duration_screen.csv')
+    # ss_obj.export_duration_screen('report/spring16/duration_screen.csv')
+    # ss_obj.export_duration_content_topic('report/spring16/duration_content_topic.csv')
+    ss_obj.export_duration_selecting_content('report/spring16/duration_selecting_content.csv')

@@ -8,6 +8,38 @@ import pandas as pd
 import numpy as np
 import datetime
 import csv
+from collections import Counter
+
+class WeeklyReport:
+    def __init__(self, data_file, date_start, date_end):
+        self.std = pd.read_csv(data_file)
+        self.date_start = date_start
+        self.date_end = date_end
+        self.std['date'] = self.std.time_1.map(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d %H:%M:%S').date())
+        self.std_w = self.std[(self.std.date >= date_start) & (self.std.date <= date_end)]
+
+    def log_x_time_per_week(self, x_time):
+        res, std_x_time_total, std_num_total = [], 0, 0
+        for course_idx in range(len(Constant.COURSE_NAME)):
+            space_name = Constant.COURSE_NAME[course_idx]
+            std_num = Constant.COURSE_NUM_STD[course_idx]
+            std_w_course = self.std_w[self.std_w.space_1 == space_name]
+            std_count = Counter(list(std_w_course.distinct_id))
+            std_x_time = [std_id for std_id in std_count if std_count[std_id] == x_time]
+            res.append(len(std_x_time) / std_num)
+            std_x_time_total += len(std_x_time)
+            std_num_total += std_num
+        res.append(std_x_time_total / std_num_total)
+        return res
+
+    def log_every_day(self):
+        
+
+    def export_x_time_per_week(self, file_name):
+        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='/n')
+        file.writerow(['no. login', 'once/month', 'once/week', 'twice/week', 'three/week', 'four/week',
+                       'five/week', 'six/week', 'every day'])
+
 
 
 def export_weekly_report(data_file, content_id_file, date_start, date_end, file_report, aggregate=False):
