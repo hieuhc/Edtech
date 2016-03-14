@@ -10,20 +10,22 @@ import datetime
 import csv
 from collections import Counter
 
+
 class WeeklyReport:
     def __init__(self, data_file, date_start, date_end):
         self.std = pd.read_csv(data_file)
         self.date_start = date_start
         self.date_end = date_end
         self.std['date'] = self.std.time_1.map(lambda x: datetime.datetime.strptime(x, '%Y-%m-%d %H:%M:%S').date())
-        self.std_w = self.std[(self.std.date >= date_start) & (self.std.date <= date_end)]
+        self.std['week_num'] = self.std.date.map(lambda x: x.isocalendar()[1])
 
     def log_x_time_per_week(self, x_time):
         res, std_x_time_total, std_num_total = [], 0, 0
+        std_w = self.std[(self.std.date >= self.date_start) & (self.std.date <= self.date_end)]
         for course_idx in range(len(Constant.COURSE_NAME)):
             space_name = Constant.COURSE_NAME[course_idx]
             std_num = Constant.COURSE_NUM_STD[course_idx]
-            std_w_course = self.std_w[self.std_w.space_1 == space_name]
+            std_w_course = std_w[std_w.space_1 == space_name]
             std_count = Counter(list(std_w_course.distinct_id))
             std_x_time = [std_id for std_id in std_count if std_count[std_id] == x_time]
             res.append(len(std_x_time) / std_num)
@@ -32,14 +34,49 @@ class WeeklyReport:
         res.append(std_x_time_total / std_num_total)
         return res
 
-    def log_every_day(self):
-        
+    def log_x_day_per_week(self, x_day, week_num=None):
+        if week_num is None:
+            std_w = self.std[(self.std.date >= self.date_start) & (self.std.date <= self.date_end)]
+        else:
+            std_w = self.std[self.std.week_num == week_num]
+        res, log_x_day_total, std_num_total = [], 0, 0
+        for course_idx in range(len(Constant.COURSE_NAME)):
+            space_name = Constant.COURSE_NAME[course_idx]
+            std_num = Constant.COURSE_NUM_STD[course_idx]
+            std_w_course = std_w[std_w.space_1 == space_name]
+            log_x_day_df = std_w_course.groupby(['distinct_id'])['date'].nunique()
+            log_x_day_lst = [log_x_day_df.index[idx] for idx in range(len(log_x_day_df.index))
+                             if log_x_day_df.values[idx] >= x_day]
+            res.append(len(log_x_day_lst) / std_num)
+            log_x_day_total += len(log_x_day_lst)
+            std_num_total += std_num
+            print('-- %s:' % space_name)
+            print('%d day: %f' % (x_day, len(log_x_day_lst) / std_num))
+        res.append(log_x_day_total / std_num_total)
+        return res
 
-    def export_x_time_per_week(self, file_name):
-        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='/n')
-        file.writerow(['no. login', 'once/month', 'once/week', 'twice/week', 'three/week', 'four/week',
-                       'five/week', 'six/week', 'every day'])
+    def export_x_day_per_week(self, file_name):
+        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='\n')
+        file.writerow(['no. login >=', '1 day/week', '2 days/week', '3 days/week', '4 days/week',
+                       '5 days/week', '6 days/week'])
+        day_lst = [1, 2, 3, 4, 5, 6]
+        log_x_day = [self.log_x_day_per_week(x) for x in day_lst]
+        log_x_day_data = np.vstack(log_x_day).T
+        labels = Constant.COURSE_NAME + ['Aggregate']
+        for idx in range(len(labels)):
+            label = labels[idx]
+            file.writerow([label] + list(log_x_day_data[idx]))
 
+    def export_x_day_every_week(self, file_name):
+        file = csv.writer(open(file_name, 'w', encoding='utf8'), delimiter=',', lineterminator='\n')
+        file.writerow(['no. login >=', '1 day/week', '2 days/week', '3 days/week', '4 days/week',
+                       '5 days/week', '6 days/week'])
+        day_lst = [1, 2, 3, 4, 5, 6]
+        week_num_set = sorted(set(self.std.week_num))
+        for week_num in week_num_set:
+            print('- week num: %d' % week_num)
+            log_x_day_week = [self.log_x_day_per_week(x, week_num)[3] for x in day_lst]
+            file.writerow(['week ' + str(week_num)] + log_x_day_week)
 
 
 def export_weekly_report(data_file, content_id_file, date_start, date_end, file_report, aggregate=False):
@@ -155,13 +192,19 @@ def export_weekly_report(data_file, content_id_file, date_start, date_end, file_
                           , '', '', str(op_topic_feed_mean), '', '', str(op_topic_content_mean)])
 if __name__ == '__main__':
     # weekly open rates report
-    start_date, end_day = datetime.date(2016, 2, 15), datetime.date(2016, 2, 21)
-    file_w = 'reports/extract_16.2.21/openrate_report_16.2.15_16.2.21.csv'
-    export_weekly_report('data/data/student.csv', 'data/data/content_id_map.csv',
-                         start_date, end_day, file_w)
-    print('----- Aggregate -----')
-    # aggregate open rates report
-    start_date, end_day = datetime.date(2016, 1, 15), datetime.date(2016, 2, 21)
-    file_all = 'reports/extract_16.2.21/openrate_report_16.1.15_16.2.21.csv'
-    export_weekly_report('data/data/student.csv', 'data/data/content_id_map.csv',
-                         start_date, end_day, file_all, aggregate=True)
+    # start_date, end_day = datetime.date(2016, 2, 15), datetime.date(2016, 2, 21)
+    # file_w = 'reports/extract_16.2.21/openrate_report_16.2.15_16.2.21.csv'
+    # export_weekly_report('data/data/student.csv', 'data/data/content_id_map.csv',
+    #                      start_date, end_day, file_w)
+    # print('----- Aggregate -----')
+    # # aggregate open rates report
+    # start_date, end_day = datetime.date(2016, 1, 15), datetime.date(2016, 2, 21)
+    # file_all = 'reports/extract_16.2.21/openrate_report_16.1.15_16.2.21.csv'
+    # export_weekly_report('data/data/student.csv', 'data/data/content_id_map.csv',
+    #                      start_date, end_day, file_all, aggregate=True)
+    start_date, end_day = datetime.date(2016, 2, 22), datetime.date(2016, 2, 28)
+    w_obj = WeeklyReport('data/data/student.csv', start_date, end_day)
+    file_w = 'reports/log_x_day_per_week.csv'
+    file_every_w = 'reports/log_x_day_every_week.csv'
+    w_obj.export_x_day_per_week(file_w)
+    w_obj.export_x_day_every_week(file_every_w)

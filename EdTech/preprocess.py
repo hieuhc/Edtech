@@ -136,6 +136,6 @@ def export_content_id_map(student_data_file, teacher_data_file, content_map_file
 
 if __name__ == '__main__':
     # add weekly data to the current overall data
-    # weekly2all('data/data/teacher.csv', 'data/json_data/anonymous-teacher-events_16.2.22.json')
-    # weekly2all('data/data/student.csv', 'data/json_data/anonymous-student-events_16.2.22.json')
+    weekly2all('data/data/teacher.csv', 'data/json_data/anonymous-teacher-events_16.2.28.json')
+    weekly2all('data/data/student.csv', 'data/json_data/anonymous-student-events_16.2.28.json')
     export_content_id_map('data/data/student.csv', 'data/data/teacher.csv', 'data/data/content_id_map.csv')

@@ -32,7 +32,26 @@ from Viewed content/topic:
 + Viewed.feed.topic: 10%
 + Selected.topic: 8%
 + Viewed.content: 42%
+=====
+To Viewed content/topic
++ Viewed space: 15%
++ Viewed content/topic: 6.7%
++ Viewewd content/all: 0.3%
++ Viewed feed/topic: 21.6%
++ Selected topic: 16%
++ Viewed content: 28%
+=> major of viewed content/topic from {selected topic, viewed feed/topic}
 
+To Selected topic
++ Viewed feed/all: 12%
++ Viewed feed/topic: 62%
+
+=====
+To Viewed content:
++ Viewed content/topic: 29%
++ Viewed content/all: 39%
++ Viewed feed/topic: 9%
+Viewed feed/all: 8%
 =====
 summary duration of 'Viewed content/all' and 'Viewed content/topic'
 Viewed.content.all Viewed.content.topic
