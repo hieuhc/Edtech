@@ -1,13 +1,28 @@
 # additional function
 lenUnq = function(x){ length(unique(x))}
 
+exportPercentage = function(df) {
+  for (i in 1: nrow(df)){
+    if (df$course[i] == 'KLS3551 Kulturledelse'){
+      df$percentage[i] = df$x[i] / 34
+    }
+    else if(df$course[i] == 'MRK3480 Forbrukeratferd'){
+      df$percentage[i] = df$x[i] / 237
+    }
+    else if (df$course[i] == 'ORG3402 Organisasjonsatferd og ledelse'){
+      df$percentage[i] = df$x[i] / 323
+    }
+  }
+  df
+}
+
 #libraries
 library(ggplot2)
 library(scales)
 
 # Date range
 start = '2016-01-20'
-end = '2016-02-21'
+end = '2016-02-28'
 
 spaceNames = c('KLS3551 Kulturledelse', 'MRK3480 Forbrukeratferd', 'Organisasjonsatferd og ledelse')
 std <- read.csv("../data/data/student.csv")
@@ -20,14 +35,16 @@ std$dateHour = as.POSIXct(strptime(strftime(strptime(std$time_1, "%Y-%m-%d %H:%M
 dfWeek = aggregate(std$distinct_id, list(course = std$space_1, week = std$weekNum), lenUnq)
 dfDay = aggregate(std$distinct_id, list(course=std$space_1, day=std$Date), lenUnq)
 dfHour = aggregate(std$distinct_id, list(course=std$space_1, hour=std$dateHour), lenUnq)
+dfWeek_percen = exportPercentage(dfWeek)
+dfDay_percen = exportPercentage(dfDay)
 # drawing
 # weekly log-in
-gWeekly = ggplot(data = dfWeek, aes(x=week, y=x, group=course, color=course)) + geom_line() 
-gWeekly = gWeekly + xlab('Week') + ylab('Number of log-in') + ggtitle('Weekly log-in per course')
+gWeekly = ggplot(data = dfWeek_percen, aes(x=week, y=percentage, group=course, color=course)) + geom_line() 
+gWeekly = gWeekly + xlab('Week') + ylab('% log-in') + ggtitle('Weekly % log-in per course')
 gWeekly
 # daily log-in
-gDaily = ggplot(data=dfDay, aes(x=day, y=x, group=course, color=course)) + geom_line()
-gDaily = gDaily + xlab('Date') + ylab('Number of log-in') + ggtitle('Daily log-in per course')
+gDaily = ggplot(data=dfDay_percen, aes(x=day, y=percentage, group=course, color=course)) + geom_line()
+gDaily = gDaily + xlab('Date') + ylab('% log-in') + ggtitle('Daily % log-in per course')
 gDaily = gDaily + scale_x_date(date_labels='%m.%d')
 gDaily
 # daily log-in

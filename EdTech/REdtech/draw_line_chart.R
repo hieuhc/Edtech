@@ -1,4 +1,4 @@
-library(ggplot2)
+c=library(ggplot2)
 
 openrate_content_linegraph <- function(file_from, course) {
   data <- read.csv(file_from)
