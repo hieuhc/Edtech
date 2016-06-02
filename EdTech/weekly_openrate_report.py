@@ -46,7 +46,7 @@ class WeeklyReport:
         if week_num is None:
             std_w = self.std[(self.std.date >= self.date_start) & (self.std.date <= self.date_end)]
         else:
-            std_w = self.std[self.std.week == week_num]
+            std_w = self.std[self.std.week_num == week_num]
         res, log_x_day_total, std_num_total = [], 0, 0
         for course_idx in range(len(Constant.COURSE_NAME)):
             space_name = Constant.COURSE_NAME[course_idx]
@@ -219,7 +219,7 @@ class WeeklyReport:
 if __name__ == '__main__':
     # create folder
     date_start_course = datetime.date(2016, 1, 15)
-    date_start_w, date_end_w = datetime.date(2016, 2, 22), datetime.date(2016, 2, 28)
+    date_start_w, date_end_w = datetime.date(2016, 2, 29), datetime.date(2016, 3, 6)
     folder_w = 'reports/' + str(date_end_w) + '/'
     if not os.path.exists(folder_w):
         os.makedirs(folder_w)
