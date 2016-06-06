@@ -52,9 +52,12 @@ class WeeklyReport:
             space_name = Constant.COURSE_NAME[course_idx]
             std_num = Constant.COURSE_NUM_STD[course_idx]
             std_w_course = std_w[std_w.space_1 == space_name]
-            log_x_day_df = std_w_course.groupby(['distinct_id'])['date'].nunique()
-            log_x_day_lst = [log_x_day_df.index[idx] for idx in range(len(log_x_day_df.index))
-                             if log_x_day_df.values[idx] >= x_day]
+            if std_w_course.shape[0] == 0:
+                log_x_day_lst = []
+            else:
+                log_x_day_df = std_w_course.groupby(['distinct_id'])['date'].nunique()
+                log_x_day_lst = [log_x_day_df.index[idx] for idx in range(len(log_x_day_df.index))
+                                 if log_x_day_df.values[idx] >= x_day]
             res.append(len(log_x_day_lst) / std_num)
             log_x_day_total += len(log_x_day_lst)
             std_num_total += std_num
@@ -218,8 +221,8 @@ class WeeklyReport:
                               , '', '', str(op_topic_feed_mean), '', '', str(op_topic_content_mean)])
 if __name__ == '__main__':
     # create folder
-    date_start_course = datetime.date(2016, 1, 15)
-    date_start_w, date_end_w = datetime.date(2016, 2, 29), datetime.date(2016, 3, 6)
+    date_start_course = datetime.date(2016, 1, 1)
+    date_start_w, date_end_w = datetime.date(2016, 1, 1), datetime.date(2016, 6, 6)
     folder_w = 'reports/' + str(date_end_w) + '/'
     if not os.path.exists(folder_w):
         os.makedirs(folder_w)
@@ -228,12 +231,12 @@ if __name__ == '__main__':
     file_open_rate = folder_w + 'openrate_report_' + str(date_start_w) + '_' + str(date_end_w) + '.csv'
     file_x_day = folder_w + 'log_x_day_' + str(date_start_w) + '_' + str(date_end_w) + '.csv'
     file_x_day_eve_wee = folder_w + 'log_x_day_every_week.csv'
+    weekly_report_obj.export_x_day_every_week(file_x_day_eve_wee)
     weekly_report_obj.export_weekly_report('data/data/content_id_map.csv', file_open_rate)
     weekly_report_obj.export_x_day_per_week(file_x_day)
-    weekly_report_obj.export_x_day_every_week(file_x_day_eve_wee)
 
     # print('----- Aggregate -----')
     # aggregate open rates report
-    weekly_report_obj = WeeklyReport('data/data/student.csv', date_start_course, date_end_w)
-    file_open_rate_all = folder_w + 'openrate_report_' + str(date_start_course) + '_' + str(date_end_w) + '.csv'
-    weekly_report_obj.export_weekly_report('data/data/content_id_map.csv', file_open_rate_all, aggregate=True)
+    # weekly_report_obj = WeeklyReport('data/data/student.csv', date_start_course, date_end_w)
+    # file_open_rate_all = folder_w + 'openrate_report_' + str(date_start_course) + '_' + str(date_end_w) + '.csv'
+    # weekly_report_obj.export_weekly_report('data/data/content_id_map.csv', file_open_rate_all, aggregate=True)

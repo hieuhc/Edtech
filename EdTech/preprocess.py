@@ -7,7 +7,7 @@ import pandas as pd
 import pytz
 from datetime import datetime
 import re
-from EdTech import parse_json_2_csv
+from EdTech import parse_json_2_csv, Constant
 import numpy as np
 
 
@@ -17,14 +17,10 @@ import numpy as np
 
 
 def get_space_name(url, event):
-    if '56936bb72bea66f99e5af2a6' in (url + event):
-        return 'KLS3551 Kulturledelse'
-    elif '569384db2bea66f99e5af2e7' in (url + event):
-        return 'MRK3480 Forbrukeratferd'
-    elif '56936bd32bea66f99e5af2a7' in (url + event):
-        return 'ORG3402 Organisasjonsatferd og ledelse'
-    else:
-        return ''
+    for course_id in Constant.ID_COURSE_DICT.keys():
+        if course_id in (url + event):
+            return Constant.ID_COURSE_DICT[course_id]
+    return ''
 
 
 def process_time(epoch):
@@ -98,13 +94,13 @@ def pre_process_data(data):
 
 
 def process_overlap(data_1, data_2):
-    time_end_1 = data_1.time[data_1.shape[0] - 1]
-    for idx in range(data_2.shape[0]):
-        if data_2.time[idx] > time_end_1:
-            idx_to_del = idx
-            break
-    data_2_new = data_2.drop(range(idx_to_del), axis=0)
-    data = pd.concat([data_1, data_2_new], ignore_index=True)
+    # time_end_1 = data_1.time[data_1.shape[0] - 1]
+    # for idx in range(data_2.shape[0]):
+    #     if data_2.time[idx] > time_end_1:
+    #         idx_to_del = idx
+    #         break
+    # data_2_new = data_2.drop(range(idx_to_del), axis=0)
+    data = pd.concat([data_1, data_2], ignore_index=True)
     return data
 
 
@@ -141,10 +137,32 @@ def recover_data_file(indicator):
     parse_json_2_csv.json2csv(data_init_file, 'data/raw/temp.csv')
     data_init_raw = pd.read_csv('data/raw/temp.csv', encoding='utf8')
     data_init_processed = pre_process_data(data_init_raw)
+    print(data_init_processed.shape)
     data_init_processed.to_csv(data_file, index=False, encoding='utf8')
 
 if __name__ == '__main__':
+    # first data.csv
+    # recover_data_file('teacher')
+
     # add weekly data to the current overall data
-    weekly2all('data/data/teacher.csv', 'data/json_data/anonymous-teacher-events_16.4.3.json')
-    weekly2all('data/data/student.csv', 'data/json_data/anonymous-student-events_16.4.3.json')
-    export_content_id_map('data/data/student.csv', 'data/data/teacher.csv', 'data/data/content_id_map.csv')
+    # weekly2all('data/data/teacher.csv', 'data/json_data/anonymous-teacher-events6.json')
+    # weekly2all('data/data/student.csv', 'data/json_data/anonymous-student-events7.json')
+    # export_content_id_map('data/data/student.csv', 'data/data/teacher.csv', 'data/data/content_id_map.csv')
+
+    # data = pd.read_csv('raw/student_raw2.csv')
+    # event_url = {data.event.values[idx]: data.current_url[idx] for idx in range(data.shape[0])}
+    # known = list(Constant.ID_COURSE_DICT.keys())
+    # urls = set(data.current_url.values)
+    # for url in urls:
+    #     if not any(k in url for k in known):
+    #         print(url)
+    #
+    # ids = set(data.currentSpaceId.values)
+    # for id in ids:
+    #     print(id)
+
+    data = pd.read_csv('data/data/student.csv')
+    courses = Constant.ID_COURSE_DICT.values()
+    for course in courses:
+        std = data[data.space_1 == course].distinct_id.values
+        print('%s: %d' % (course, len(set(std))))

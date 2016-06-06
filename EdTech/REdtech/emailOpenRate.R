@@ -4,13 +4,25 @@ lenUnq = function(x){ length(unique(x))}
 exportPercentage = function(df) {
   for (i in 1: nrow(df)){
     if (df$course[i] == 'KLS3551 Kulturledelse'){
-      df$percentage[i] = df$x[i] / 34
+      df$percentage[i] = df$x[i] / 42
     }
     else if(df$course[i] == 'MRK3480 Forbrukeratferd'){
-      df$percentage[i] = df$x[i] / 237
+      df$percentage[i] = df$x[i] / 325
     }
     else if (df$course[i] == 'ORG3402 Organisasjonsatferd og ledelse'){
-      df$percentage[i] = df$x[i] / 319
+      df$percentage[i] = df$x[i] / 578
+    }
+    else if(df$course[i] == 'ENT4100 Idea evaluation'){
+      df$percentage[i] = df$x[i] / 24
+    }
+    else if (df$course[i] == 'STV4028 Process Tracing ...'){
+      df$percentage[i] = df$x[i] / 11
+    }
+    else if(df$course[i] == 'Bases de Datos'){
+      df$percentage[i] = df$x[i] / 16
+    }
+    else if (df$course[i] == 'Statistics and computerized information analysis'){
+      df$percentage[i] = df$x[i] / 19
     }
   }
   df
@@ -22,11 +34,12 @@ library(scales)
 
 # Date range
 start = '2016-01-20'
-end = '2016-02-21'
+end = '2016-06-06'
 
-spaceNames = c('KLS3551 Kulturledelse', 'MRK3480 Forbrukeratferd', 'Organisasjonsatferd og ledelse')
-std <- read.csv("../data/data/student.csv")
-std = subset(std, space_1 != '' & event_1=='UTM events')
+std_origin <- read.csv("../data/data/student.csv")
+
+spaceNames = c('Bases de Datos', 'Statistics and computerized information analysis')
+std = subset(std_origin, space_1 %in% spaceNames & event_1=='UTM events')
 std$space_1 = factor(std$space_1)
 std$Date = as.Date(strptime(std$time_1, "%Y-%m-%d %H:%M:%S"))
 std = subset(std, Date >= start)

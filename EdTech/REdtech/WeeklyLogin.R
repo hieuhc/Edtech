@@ -4,13 +4,25 @@ lenUnq = function(x){ length(unique(x))}
 exportPercentage = function(df) {
   for (i in 1: nrow(df)){
     if (df$course[i] == 'KLS3551 Kulturledelse'){
-      df$percentage[i] = df$x[i] / 34
+      df$percentage[i] = df$x[i] / 42
     }
     else if(df$course[i] == 'MRK3480 Forbrukeratferd'){
-      df$percentage[i] = df$x[i] / 237
+      df$percentage[i] = df$x[i] / 325
     }
     else if (df$course[i] == 'ORG3402 Organisasjonsatferd og ledelse'){
-      df$percentage[i] = df$x[i] / 323
+      df$percentage[i] = df$x[i] / 578
+    }
+    else if(df$course[i] == 'ENT4100 Idea evaluation'){
+      df$percentage[i] = df$x[i] / 24
+    }
+    else if (df$course[i] == 'STV4028 Process Tracing ...'){
+      df$percentage[i] = df$x[i] / 11
+    }
+    else if(df$course[i] == 'Bases de Datos'){
+      df$percentage[i] = df$x[i] / 16
+    }
+    else if (df$course[i] == 'Statistics and computerized information analysis'){
+      df$percentage[i] = df$x[i] / 19
     }
   }
   df
@@ -22,11 +34,12 @@ library(scales)
 
 # Date range
 start = '2016-01-20'
-end = '2016-02-28'
-
-spaceNames = c('KLS3551 Kulturledelse', 'MRK3480 Forbrukeratferd', 'Organisasjonsatferd og ledelse')
+end = '2016-06-06'
 std <- read.csv("../data/data/student.csv")
-std = subset(std, space_1 != '')
+std_origin <- std
+
+spaceNames = c('Bases de Datos', 'Statistics and computerized information analysis')
+std = subset(std_origin, space_1 %in% spaceNames)
 std$space_1 = factor(std$space_1)
 std$Date = as.Date(strptime(std$time_1, "%Y-%m-%d %H:%M:%S"))
 std = subset(std, Date >= start)
@@ -47,7 +60,7 @@ gDaily = ggplot(data=dfDay_percen, aes(x=day, y=percentage, group=course, color=
 gDaily = gDaily + xlab('Date') + ylab('% log-in') + ggtitle('Daily % log-in per course')
 gDaily = gDaily + scale_x_date(date_labels='%m.%d')
 gDaily
-# daily log-in
+# hourly log-in
 gHourly = ggplot(data=dfHour, aes(x=hour, y=x, group=course, color=course)) + geom_line()
 gHourly = gHourly + scale_x_datetime(breaks = date_breaks("12 hour"), labels = date_format('%m-%d:%H','Europe/Oslo'))
 gHourly = gHourly + xlab('Hour') + ylab('Number of log-in') + ggtitle('Hourly log-in per course')

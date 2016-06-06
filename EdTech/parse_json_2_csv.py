@@ -29,16 +29,12 @@ def json2csv(json_file_name, csv_file_name):
             else:
                 item_val = x['properties'][prop]
             row_content.append(item_val)
-               
+
         f.writerow(row_content)
 if __name__ == '__main__':
     # convert weekly data
     
     # convert a overall data
-    file_json = 'data/json_data/anonymous-teacher-events.json'
-    file_csv = 'data/raw/teacher_raw.csv'
+    file_json = 'json_data/anonymous-student-events7.json'
+    file_csv = 'raw/student_raw7.csv'
     json2csv(file_json, file_csv)
-     
-    
-    
-    
